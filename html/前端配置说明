@@ -1,3 +1,4 @@
+入口地址（自行修改端口号）：http://localhost:63342/scangku/html/backstage/main/main.html
 后台：
 1、主左导航栏（backstage/main/left.html）使用 本地地址栏URL获取并根据指定关键词实现展开导航组功能。所以添加导航时请自行观察适合的关键词进行添加。
 2、每个html文件 第一个导入的文件均为 init.js文件（加载页面时提示加载中）
