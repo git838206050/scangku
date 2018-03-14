@@ -1,0 +1,67 @@
+<!-- 头部 -->
+<h1 id="logo">仓库管理系统</h1>
+<div class="panel-group" id="accordion">
+	<div class="panel panel-default">
+		<div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#productService">
+			<h4 class="panel-title">
+				商品业务<span class="caret"></span>
+			</h4>
+		</div>
+		<div id="productService" class="panel-collapse collapse">
+			<a class="panel-body" href="../main/showproduct.html">
+				商品管理
+			</a>
+			<a href="../main/examineproduct.html" class="panel-body">
+				未审核商品
+			</a>
+			<a href="../main/productchart.html" class="panel-body">
+				商品统计
+			</a>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading" data-toggle="collapse" data-parent="#accordion" href="#adminService">
+			<h4 class="panel-title">
+				用户业务<span class="caret"></span>
+			</h4>
+		</div>
+		<div id="adminService" class="panel-collapse collapse">
+			<a href="../admin/adminmanage.html" class="panel-body">
+				用户管理
+			</a>
+			<a href="../admin/rightsmanage.html" class="panel-body">
+				权限管理
+			</a>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<a href="#" class="panel-body">基本配置</a>
+	</div>
+	<div class="panel panel-default">
+		<a href="../user/login.html" class="panel-body">注销用户</a>
+	</div>
+</div>
+
+<script>
+$(function(){
+	showNavIn();
+	
+	/*
+		展开左边主导航对应导航列表
+		
+		导航栏分类必须在同一个项目包内
+		
+		实现思路：获取当前地址栏URL，搜索是否存在对应的包文件名 展开对应的导航栏
+		
+		order 包表示不分组的导航
+	*/
+	function showNavIn(){
+		var winHref = window.location.href;
+		if(winHref.indexOf('/admin/') != -1){
+			$('#adminService').addClass('in');
+		}else if(winHref.indexOf('/main/') != -1){
+			$('#productService').addClass('in');
+		}
+	};
+});
+</script>

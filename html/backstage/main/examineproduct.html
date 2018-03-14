@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>商品审核</title>
+<script src="../main/js/init.js"></script>
+<link href="css/style.css" rel="stylesheet">
+<script src="../../plugins/vue/vue.js"></script>
+<script src="../../plugins/zepto/zepto.min.js"></script>
+<script src="../../plugins/jquery/jquery-3.2.1.min.js"></script>
+<link href="../../plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="../../plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../plugins/font/iconfont.js"></script>
+<link href="../../plugins/font/iconfont.css" rel="stylesheet">
+<script src="../../plugins/font/iconfont.js"></script>
+<script src="js/showproduct.js"></script>
+
+</head>
+<body>
+<!-- 左栏目 -->
+<div id="column-left" class="col-md-2"></div>
+<!-- 头部 -->
+<div id="header" class="col-md-10"></div>
+
+<!-- 内容展示部分 -->
+<div id="content" class="col-md-10">
+	<ul class="top-btn">
+		<li>
+			<!-- 显示商品 -->
+			<a href="showproduct.html" class="btn btn-primary ptbtn">商品管理</a>
+		</li>
+		<li class="dropdown">
+			<a class="btn btn-default ptbtn" data-toggle="dropdown" id="showOrder" aria-haspopup="true" aria-expanded="false">选择显示排序
+		    <span class="caret"></span></a>
+		    
+			<ul class="dropdown-menu" aria-labelledby="showOrder">
+				<li><a href="#">综合↓</a></li>
+				<li><a href="#">创建时间 ↓</a></li>
+				<li><a href="#">进货价↓</a></li>
+				<li><a href="#">最后修改时间↓</a></li>
+				<li><a href="#">审核通过↓</a></li>
+				<li><a href="#">商品类型↓</a></li>
+			</ul>
+		</li>
+		<li class="dropdown">
+			<a class="btn btn-default ptbtn" data-toggle="dropdown" id="showNum" aria-haspopup="true" aria-expanded="false">每页显示数量
+		    <span class="caret"></span></a>
+		    
+			<ul class="dropdown-menu" aria-labelledby="showNum">
+				<li><a href="#">10</a></li>
+				<li><a href="#">20</a></li>
+				<li><a href="#">50</a></li>
+				<li><a href="#">100</a></li>
+				<li><a href="#">200</a></li>
+				<li><a href="#">500</a></li>
+			</ul>
+		</li>
+		<li class="col-xs-4">
+		    <div class="input-group ptbtn">
+		    	<input type="text" class="form-control" placeholder="搜索商品">
+		    	<div class="input-group-addon btn btn-default">搜索</div>
+		    </div>
+		</li>
+		
+		<li class="rm">
+			<!-- 头部页码 -->
+			<ul class="pagination" style=" float: right; margin: 5px 0px 10px;">
+				<li>
+				  <a href="#" aria-label="Previous">
+				    <span aria-hidden="true">&laquo;</span>
+				  </a>
+				</li>
+				<li class="active"><a href="#">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">3</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#">5</a></li>
+				<li class="disabled"><a>...</a></li>
+				<li><a href="#">99</a></li>
+				<li>
+				  <a href="#" aria-label="Next">
+				    <span aria-hidden="true">&raquo;</span>
+				  </a>
+				</li>
+			</ul>
+		</li>
+    </ul>
+	<table class="table table-hover">
+		<thead>
+			<th>序号</th>
+			<th>主图片</th>
+			<th>商品名</th>
+			<th>上传时间</th>
+			<th>重量(单位：g)</th>
+			<th>进货价</th>
+			<th>最后修改者</th>
+			<th>审核操作</th>
+		</thead>
+		<tbody id="app">
+			<tr v-for="(key,index) in productInfo">
+			  	<th>{{ index+1 }}</th>
+			  	<td>
+			  		<img class="img-rounded img100" src="https://f10.baidu.com/it/u=2903580660,3473125105&fm=72" />
+			  		{{ key.url }}
+			  	</td>
+			  	<td>{{ key.name }}</td>
+			  	<td>2018-17-08 18:11</td>
+			  	<td>5010</td>
+			  	<td>998</td>
+			  	<td>xxx</td>
+			  	<td>
+			  		<a href="#" class="btn btn-success btn-xs">通过</a>
+			  		<a href="#" class="btn btn-danger btn-xs">未通过</a>
+			  	</td>
+			  	
+			</tr>
+		</tbody>
+	</table>
+	
+	<!-- 底部页码 -->
+	<ul class="pagination page">
+		<li>
+		  <a href="#" aria-label="Previous">
+		    <span aria-hidden="true">&laquo;</span>
+		  </a>
+		</li>
+		<li class="active"><a href="#">1</a></li>
+		<li><a href="#">2</a></li>
+		<li><a href="#">3</a></li>
+		<li><a href="#">4</a></li>
+		<li><a href="#">5</a></li>
+		<li class="disabled"><a>...</a></li>
+		<li><a href="#">99</a></li>
+		<li>
+		  <a href="#" aria-label="Next">
+		    <span aria-hidden="true">&raquo;</span>
+		  </a>
+		</li>
+	</ul>
+</div>
+			  		
+<!-- 删除提示 -->
+<div class="modal fade" id="deleteModa" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">操作提示</h4>
+			</div>
+			<div class="modal-body" id="deleteModaBody">是否确定删除该商品</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+				<button type="button" class="btn btn-primary">确定</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- 详细提示框 -->
+<div class="modal fade" id="showInfoModa" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" 
+						aria-hidden="true">×
+				</button>
+				<h4 class="modal-title">
+					商品详细信息
+				</h4>
+			</div>
+			<div class="modal-body" id="info-body">
+				按下 ESC 按钮退出。
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" 
+						data-dismiss="modal">关闭
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

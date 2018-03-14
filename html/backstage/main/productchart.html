@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>商品统计</title>
+<link href="css/style.css" rel="stylesheet">
+<script src="js/init.js"></script>
+</head>
+<body>
+<!-- 左栏目 -->
+<div id="column-left" class="col-md-2"></div>
+<!-- 头部 -->
+<div id="header" class="col-md-10"></div>
+
+<!-- 内容展示部分 -->
+<div id="content" class="col-md-10">
+	<div id="main" style="width: 100%;height:700px;"></div>
+</div>
+
+<script src="../../plugins/vue/vue.js"></script>
+<script src="../../plugins/zepto/zepto.min.js"></script>
+<script src="../../plugins/jquery/jquery-3.2.1.min.js"></script>
+<link href="../../plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="../../plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="../../plugins/font/iconfont.js"></script>
+<script src="../../plugins/ECharts/echarts.min.js"></script>
+<link href="../../plugins/font/iconfont.css" rel="stylesheet">
+<script src="../../plugins/font/iconfont.js"></script>
+
+
+<!-- 图形展示 -->
+<script>
+var myChart = echarts.init(document.getElementById('main'));
+var data1 = [];
+var data2 = [];
+var data3 = [];
+
+var random = function (max) {
+    return (Math.random() * max).toFixed(3);
+};
+
+for (var i = 0; i < 500; i++) {
+    data1.push([random(15), random(10), random(1)]);
+    data2.push([random(10), random(10), random(1)]);
+    data3.push([random(15), random(10), random(1)]);
+}
+
+var base = +new Date(2014, 9, 3);
+var oneDay = 24 * 3600 * 1000;
+var date = [];
+var date2 = [];
+var date3 = [];
+
+var data = [Math.random() * 300];
+var data2 = [Math.random() * 300];
+var data3 = [Math.random() * 300];
+
+for (var i = 1; i < 2000; i++) {
+    var now = new Date(base += oneDay);
+    date.push([now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'));
+    data.push(Math.round((Math.random() - 0.5) * 50 + data[i - 1]));
+    
+    var now2 = new Date(base += oneDay);
+    date2.push([now.getFullYear(), now2.getMonth() + 1, now2.getDate()].join('/'));
+    data2.push(Math.round((Math.random() - 0.5) * 40 + data2[i - 1]));
+    
+    var now3 = new Date(base += oneDay);
+    date3.push([now.getFullYear(), now2.getMonth() + 1, now3.getDate()].join('/'));
+    data3.push(Math.round((Math.random() - 0.5) * 70 + data3[i - 1]));
+}
+
+option = {
+    legend: {
+        data: ['模拟数据', '模拟数据2', '模拟数据3']
+    },
+    tooltip: {
+        trigger: 'axis',
+        position: function (pt) {
+            return [pt[0], '10%'];
+        }
+    },
+    title: {
+        left: 'center',
+        text: '',
+    },
+    toolbox: {
+        feature: {
+            dataZoom: {
+                yAxisIndex: 'none'
+            },
+            restore: {},
+            saveAsImage: {}
+        }
+    },
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: date
+    },
+    yAxis: {
+        type: 'value',
+        boundaryGap: [0, '100%']
+    },
+    dataZoom: [{
+        type: 'inside',
+        start: 0,
+        end: 10
+    }, {
+        start: 0,
+        end: 10,
+        handleSize: '30%',
+        handleStyle: {
+            color: '#fff',
+            shadowBlur: 3,
+            shadowColor: 'rgba(0, 0, 0, 0.6)',
+            shadowOffsetX: 2,
+            shadowOffsetY: 2
+        }
+    }],
+    series: [
+        {
+            name:'模拟数据',
+            type:'line',
+            smooth:true,
+            symbol: 'none',
+            sampling: 'average',
+            itemStyle: {
+                normal: {
+                    color: 'rgb(0,0,0)'
+                }
+            },
+            areaStyle: {
+                normal: {
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                        offset: 0,
+                        color: 'rgb(243,243,243)'
+                    }, {
+                        offset: 1,
+                        color: 'rgb(243,243,243)'
+                    }])
+                }
+            },
+            data: data
+        },
+        {
+            name:'模拟数据2',
+            type:'line',
+            smooth:true,
+            symbol: 'none',
+            sampling: 'average',
+            itemStyle: {
+                normal: {
+                    color: 'rgb(255,34,255)'
+                }
+            },
+            areaStyle: {
+                normal: {
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                        offset: 0,
+                        color: 'rgb(243,243,243)'
+                    }, {
+                        offset: 1,
+                        color: 'rgb(243,243,243)'
+                    }])
+                }
+            },
+            data: data2
+        },
+        {
+            name:'模拟数据3',
+            type:'line',
+            smooth:true,
+            symbol: 'none',
+            sampling: 'average',
+            itemStyle: {
+                normal: {
+                    color: 'rgb(253,0,0)'
+                }
+            },
+            areaStyle: {
+                normal: {
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                        offset: 0,
+                        color: 'rgb(243,243,243)'
+                    }, {
+                        offset: 1,
+                        color: 'rgb(243,243,243)'
+                    }])
+                }
+            },
+            data: data3
+        }
+    ]
+};
+
+myChart.setOption(option);
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>用户管理</title>
+<script src="../main/js/init.js"></script>
+<link href="../main/css/style.css" rel="stylesheet">
+
+<script src="../../plugins/vue/vue.js"></script>
+<script src="../../plugins/zepto/zepto.min.js"></script>
+<script src="../../plugins/jquery/jquery-3.2.1.min.js"></script>
+<link href="../../plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="../../plugins/bootstrap/js/bootstrap.min.js"></script>
+<link href="../../plugins/font/iconfont.css" rel="stylesheet">
+<script src="../../plugins/font/iconfont.js"></script>
+
+<script src="js/adminmanage.js"></script>
+</head>
+<body>
+<!-- 左栏目 -->
+<div id="column-left" class="col-md-2"></div>
+<!-- 头部 -->
+<div id="header" class="col-md-10"></div>
+
+<!-- 内容展示部分 -->
+<div id="content" class="col-md-10">
+	<ul class="top-btn">
+		<li>
+			<!-- 显示商品 -->
+			<a href="addproduct.html" class="btn btn-success ptbtn">添加用户</a>
+		</li>
+		<li class="dropdown">
+			<a class="btn btn-default ptbtn" data-toggle="dropdown" id="showOrder" aria-haspopup="true" aria-expanded="false">选择显示排序
+		    <span class="caret"></span></a>
+		    
+			<ul class="dropdown-menu" aria-labelledby="showOrder">
+				<li><a href="#">综合↓</a></li>
+				<li><a href="#">创建时间 ↓</a></li>
+				<li><a href="#">进货价↓</a></li>
+				<li><a href="#">最后修改时间↓</a></li>
+				<li><a href="#">审核通过↓</a></li>
+				<li><a href="#">商品类型↓</a></li>
+			</ul>
+		</li>
+		
+    </ul>
+	<table class="table table-hover">
+		<thead>
+			<th>序号</th>
+			<th>用户名</th>
+			<th>最后登录时间</th>
+			<th>角色</th>
+			<th>权限详细</th>
+			<th>操作</th>
+		</thead>
+		<tbody id="app">
+			<tr v-for="(key,index) in productInfo">
+			  	<th>{{ index+1 }}</th>
+			  	<td>{{ key.name }}</td>
+			  	<td>2018-17-08 18:11</td>
+			  	<td>超级管理员</td>
+			  	<td>可以删除整个数据库</td>
+			  	<td>
+			  		<a href="#" class="btn btn-danger btn-xs delete-info-btn" data-target="#deleteModa">禁止登陆</a>
+			  		<a href="updateproduct.html" class="btn btn-warning btn-xs">编辑</a>
+			  		<a href="#" class="btn btn-info btn-xs show-info-btn" data-target="#showInfoModa" :infoindex="index">详细</a>
+			  	</td>
+			  	
+			</tr>
+		</tbody>
+	</table>
+</div>
+</body>
+</html>
