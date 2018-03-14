@@ -1,0 +1,6 @@
+.product-img{padding:0px; width: 100%; height:300px;}
+.product-search-box{padding:20px 0px 20px 10% !important; border-bottom: 1px solid #c2c2c2;}
+.product-box{padding:0px 0px !important; background-color: #fff;}
+.p-info{ margin-top: 20px;}
+.p-price{font-weight: bold; font-size:14px;}
+.p-name{ color:#999; font-size: 12px; display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
