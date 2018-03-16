@@ -100,8 +100,7 @@
 			<tr v-for="(key,index) in productInfo">
 			  	<th>{{ index+1 }}</th>
 			  	<td>
-			  		<img class="img-rounded img100" src="https://f10.baidu.com/it/u=2903580660,3473125105&fm=72" />
-			  		{{ key.url }}
+			  		<img class="img-rounded img100" :src="key.url" />
 			  	</td>
 			  	<td>{{ key.name }}</td>
 			  	<td>2018-17-08 18:11</td>

@@ -6,16 +6,18 @@
 <link href="../base/css/style.css" rel="stylesheet">
 <link href="css/index.css" rel="stylesheet">
 <script src="../../plugins/vue/vue.js"></script>
+<script src="../../plugins/zepto/zepto.min.js"></script>
 <script src="../../plugins/jquery/jquery-3.2.1.min.js"></script>
 <link href="../../plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <script src="../../plugins/bootstrap/js/bootstrap.min.js"></script>
 <script src="../base/js/base.js"></script>
+<script src="js/index.js"></script>
 
 </head>
 <body>
 <div class="col-md-2"></div>
-<div id="carousel-example-generic" class="carousel slide col-md-8" data-ride="carousel">
-	<div class="col-md-12" style="padding: 0px;">
+<div class="col-md-8">
+	<div id="carousel-example-generic" class="col-md-12 carousel slide" data-ride="carousel" style="padding: 0px;">
 		<ol class="carousel-indicators">
 			<li data-target="#carousel-example-generic" data-slide-to="0"></li>
 			<li data-target="#carousel-example-generic" data-slide-to="1" class="active"></li>
@@ -77,178 +79,55 @@
 			<li><a href="#">衣服↓</a></li>
 		</ul>
 	</div>
-
-	<div class="col-md-10 product-search-box">
+	<div class="dropdown col-md-1" style=" padding:20px 0px; border-bottom: 1px solid #c2c2c2;">
+		<a href="shopcart.html" class="btn btn-primary" type="button">
+			我的购物车
+		</a>
+	</div>
+	<div class="col-md-9 product-search-box">
 		<div class="input-group">
 			<input type="text" class="form-control" id="exampleInputAmount" placeholder="输入搜索的商品关键词">
 			<div class="input-group-addon btn">商品搜索</div>
 		</div>
 	</div>
 
-	<div class="col-md-12 product-box">
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3994450565,4064214859&fm=27&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名这是商品名这是商品名这是商品名这是商品名这是商品名这是商品名这是商品名这是商品名这是商品名这是商品名</div>
-		</a>
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2280183197,763913268&fm=200&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名</div>
-		</a>
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3935222401,1983125872&fm=27&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名</div>
-		</a>
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1307334686,2078374065&fm=27&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名</div>
-		</a>
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="http://img1.imgtn.bdimg.com/it/u=3400877733,3849922232&fm=200&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名</div>
-		</a>
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="http://img3.imgtn.bdimg.com/it/u=3762564554,919211873&fm=200&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名</div>
-		</a>
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=18558777,2970581122&fm=27&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名</div>
-		</a>
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1891820928,1620033395&fm=27&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名</div>
-		</a>
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3994450565,4064214859&fm=27&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名这是商品名这是商品名这是商品名这是商品名这是商品名这是商品名这是商品名这是商品名这是商品名这是商品名</div>
-		</a>
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2280183197,763913268&fm=200&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名</div>
-		</a>
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3935222401,1983125872&fm=27&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名</div>
-		</a>
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1307334686,2078374065&fm=27&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名</div>
-		</a>
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="http://img1.imgtn.bdimg.com/it/u=3400877733,3849922232&fm=200&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名</div>
-		</a>
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="http://img3.imgtn.bdimg.com/it/u=3762564554,919211873&fm=200&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名</div>
-		</a>
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=18558777,2970581122&fm=27&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名</div>
-		</a>
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1891820928,1620033395&fm=27&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名</div>
-		</a>
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3994450565,4064214859&fm=27&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名这是商品名这是商品名这是商品名这是商品名这是商品名这是商品名这是商品名这是商品名这是商品名这是商品名</div>
-		</a>
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2280183197,763913268&fm=200&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名</div>
-		</a>
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3935222401,1983125872&fm=27&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名</div>
-		</a>
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1307334686,2078374065&fm=27&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名</div>
-		</a>
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="http://img1.imgtn.bdimg.com/it/u=3400877733,3849922232&fm=200&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名</div>
-		</a>
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="http://img3.imgtn.bdimg.com/it/u=3762564554,919211873&fm=200&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名</div>
-		</a>
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=18558777,2970581122&fm=27&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名</div>
-		</a>
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1891820928,1620033395&fm=27&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名</div>
-		</a>
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3994450565,4064214859&fm=27&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名这是商品名这是商品名这是商品名这是商品名这是商品名这是商品名这是商品名这是商品名这是商品名这是商品名</div>
-		</a>
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2280183197,763913268&fm=200&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名</div>
-		</a>
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3935222401,1983125872&fm=27&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名</div>
-		</a>
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1307334686,2078374065&fm=27&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名</div>
-		</a>
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="http://img1.imgtn.bdimg.com/it/u=3400877733,3849922232&fm=200&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名</div>
-		</a>
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="http://img3.imgtn.bdimg.com/it/u=3762564554,919211873&fm=200&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名</div>
-		</a>
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=18558777,2970581122&fm=27&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名</div>
-		</a>
-		<a href="#" class="col-md-3 p-info">
-			<img class="product-img" src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1891820928,1620033395&fm=27&gp=0.jpg"></img>
-			<div class="p-price">$ 998</div>
-			<div class="p-name">这是商品名</div>
+	<div class="col-md-12 product-box" id="itemBox">
+		<a class="col-md-3 p-info" v-for="(item,index) in items" :itemIndex="index">
+			<img class="product-img" :src="item.mainImageUrl" />
+			<div class="p-price">$ {{ item.price }}</div>
+			<div class="p-name">{{ item.name }}</div>
 		</a>
 	</div>
 	<div class="loading">数据加载中&nbsp&nbsp<img src="../base/images/loading.gif"></div>
 </div>
 <div class="col-md-2"><a href="../../backstage/main/showproduct.html">没时间解释了，点击直接跳转到后台</a></div>
+
+
+<!-- 详细提示框 -->
+<div class="modal fade" id="showInfoModa" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">×
+				</button>
+				<h4 class="modal-title">
+					商品详细信息(按下 ESC 按钮退出。)
+				</h4>
+			</div>
+			<div class="modal-body" id="info-body">
+				按下 ESC 按钮退出。
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">
+					关闭
+				</button>
+				<button type="button" class="btn btn-success">
+					加入购物车
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
 </body>
 </html>
