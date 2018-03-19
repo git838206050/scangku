@@ -9,7 +9,8 @@ function init(){
 	
 	var imga = document.getElementById("loading-img");
 	window.onload=function (){
-		$('initLcy').remove();
-		$.getScript("../main/js/main.js");
+        $.getScript("../main/js/main.js",function(){
+            $('initLcy').remove();
+		});
 	};
 };
