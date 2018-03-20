@@ -36,8 +36,6 @@ $(function () {
         var thisValMin = $(this).attr("min")===null ? 1:Number($(this).attr("min"));
         var thisValMax = $(this).attr("max")===null ? 999:Number($(this).attr("max"));
         if((thisVal>=thisValMin) && (thisVal<=thisValMax)){
-            console.log(thisVal>=thisValMin +"|133|");
-            console.log(thisVal<=thisValMax);
             for(var i=0; i<data.length; i++){
                 if(data[i].id === Number(shopId)){
                     data[i].cartShopNum = thisVal;
