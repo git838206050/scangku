@@ -1,63 +1,62 @@
+"use strict";
 $(function () {
-    var data = [
-        {
-            name:'商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称',
-            price: 998,
-            mainImageUrl:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3239394708,3811939575&fm=27&gp=0.jpg',
-            describe:'商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述\n' +
-            '品描述商品描述商品描述商品描述商品描述商描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述\n' +
-            '品描述商品描述商品描述商品描述商品描述商描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述\n' +
-            '品描述商品描述商品描述商品描述商品描述商描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述\n' +
-            '品描述商品描述商品描述商品描述商品描述商描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述\n' +
-            '品描述商品描述商品描述商品描述商品描述商描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述\n' +
-            '品描述商品描述商品描述商品描述商品描述商描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述\n' +
-            '品描述商品描述商品描述商品描述商品描述商描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述\n' +
-            '品描述商品描述商品描述商品描述商品描述商描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述\n' +
-            '品描述商品描述商品描述商品描述商品描述商描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述\n' +
-            '品描述商品描述商品描述商品描述商品描述商描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述\n' +
-            '品描述商品描述商品描述商品描述商品描述商描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述\n' +
-            '品描述商品描述商品描述商品描述商品描述商描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述'
-        },
-        {
-            name:'华硕笔记本电脑FL5900',
-            price: 99998,
-            mainImageUrl:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1891820928,1620033395&fm=27&gp=0.jpg',
-            describe:'\n' +
-            '笔记本电脑（Laptop）又被称为“便携式电脑，手提电脑、掌上电脑或膝上型电脑”，其最大的特点就是机身小巧，相比PC携带方便，是一种小型、可便于携带的个人电脑，通常重1-3公斤。\n' +
-            '当前的发展趋势是体积越来越小，重量越来越轻，而功能却越发强大。为了缩小体积，笔记型电脑当今采用液晶显示器（也称液晶LCD屏）。除了键盘以外有些还装有触控板（Touchpad）或触控点（Pointing stick）作为定位设备（Pointing device）。\n' +
-            '笔记本跟PC的主要区别在于其携带方便，对主板，CPU要求，内存，显卡，硬盘容量都有不同等等。虽然笔记本的机身十分轻便，但完全不用怀疑其应用性，在日常操作和基本商务、娱乐 、运算操作中，笔记本电脑完全可以胜任。当今的笔记本电脑正在根据用途分化出不同的趋势，上网本趋于日常办公以及电影，商务本趋于稳定低功耗获得更长久的续航时间，家用本拥有不错的性能和很高的性价比，游戏本则是专门为了迎合少数人群外出游戏使用的，发烧级配置，娱乐体验效果好，当然价格不低，电池续航时间也不理想。\n' +
-            '目前，在全球市场上有多种品牌的笔记本电脑，排名前列的有联想、华硕、戴尔（DELL）、ThinkPad、惠普（HP）、苹果（Apple）、宏碁（Acer）、索尼、东芝、三星等。[1] \n'
-        },
-        {
-            name:'商品名称',
-            price: 998,
-            mainImageUrl:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3239394708,3811939575&fm=27&gp=0.jpg',
-            describe:'商品描述商品描述商品描述商品描述商品描述商品描述商品品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述'
-        },
-        {
-            name:'商品名称',
-            price: 998,
-            mainImageUrl:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3239394708,3811939575&fm=27&gp=0.jpg',
-            describe:'商品描述商品描述商品描述商品描述商品描述品描述商描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述'
-        },
-        {
-            name:'商品名称',
-            price: 998,
-            mainImageUrl:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3239394708,3811939575&fm=27&gp=0.jpg',
-            describe:'商品描述商品描述商品描述商品描述商品描述商品描述述商品描述商品描述商品描述商品描述商品描述商品描述商品描述商品描述'
-        },
-        {
-            name:'商品名称',
-            price: 998,
-            mainImageUrl:'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3239394708,3811939575&fm=27&gp=0.jpg',
-            describe:'商品描述商品描述商品描述商品描述商品描述商品描述商述商品描述商品描述商品描述商品描述商品描述商品描述商品描述'
+    var data = new Array();
+    if(typeof (Storage) !== "undefined"){
+        var StoShopCartArr = localStorage.getItem('shopCartArr');
+        if(StoShopCartArr !== null){
+            data = JSON.parse(StoShopCartArr);
         }
-    ];
-
+    }else{
+        alert('您的浏览器不兼容localStorage');
+    }
     new Vue({
         el:'#itemBox',
         data:{
             shopCart:data
         }
     });
+
+    /**
+     * 点击移除商品按钮时触发删除指定商品事件
+     */
+    $('.cart-action-btn').click(function(){
+        var shopId = $(this).attr("shopIndex");
+        for(var i=0; i<data.length; i++){
+            if(data[i].id === Number(shopId)){
+                data.splice(i,1);
+                localStorage.setItem('shopCartArr',JSON.stringify(data));
+                showTotal();
+            }
+        }
+    });
+
+    $('.shop-num-btn').on('click blur',function () {
+        var shopId = Number($(this).attr("shopIndex"));
+        var thisVal = $(this).val();
+        var thisValMin = $(this).attr("min")===null ? 1:Number($(this).attr("min"));
+        var thisValMax = $(this).attr("max")===null ? 999:Number($(this).attr("max"));
+        if((thisVal>=thisValMin) && (thisVal<=thisValMax)){
+            console.log(thisVal>=thisValMin +"|133|");
+            console.log(thisVal<=thisValMax);
+            for(var i=0; i<data.length; i++){
+                if(data[i].id === Number(shopId)){
+                    data[i].cartShopNum = thisVal;
+                    localStorage.setItem('shopCartArr',JSON.stringify(data));
+                }
+            }
+        }
+        showTotal();
+    });
+
+    showTotal();
+    /**
+     * 显示总计 价格
+     */
+    function showTotal() {
+        var total = 0;
+        for(var i=0; i<data.length; i++){
+            total += data[i].price * data[i].cartShopNum;
+        }
+        $('#checkoutPriceValue').text(total);
+    }
 });

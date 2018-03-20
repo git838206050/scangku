@@ -17,3 +17,7 @@
 .cart-btn{ position: relative;}
 .cart-action-btn{ position: absolute; left: 0px; right: 0; bottom:0px; top:0px; height: 40px; margin:auto !important;}
 .shop-name{display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.checkout-box{ height: 100px;}
+.checkout-btn{ float: right; width: 80px; height: 40px; margin-top: 30px; margin-right: 24px; font-size: 16px !important;}
+.checkout-price{ float: right; line-height: 100px; margin-right: 30px; font-size: 18px; font-weight: bold;}
+#checkoutPriceValue{ color: red;}

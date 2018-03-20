@@ -10,6 +10,7 @@
     <link href="../../plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="../../plugins/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/shopcart.js"></script>
+    <script src="model/item.js"></script>
     <script src="../base/js/base.js"></script>
 </head>
 <body>
@@ -79,13 +80,19 @@
                 {{ item.price }} $
             </div>
             <div class="col-md-1 cart-btn-box">
-                <input class="shop-num-btn" max="999" min="1" type="number" value="1"/>
+                <input class="shop-num-btn" max="999" min="1" type="number" :shopIndex="item.id" :value="item.cartShopNum"/>
             </div>
             <div class="col-md-1 cart-btn-box">
-                <button type="button" class="btn btn-danger cart-action-btn">
+                <button type="button" class="btn btn-danger cart-action-btn" :shopIndex="item.id">
                     移除商品
                 </button>
             </div>
+        </div>
+        <div class="col-md-12 checkout-box">
+            <button type="button" class="btn btn-danger checkout-btn">
+                结&nbsp&nbsp账
+            </button>
+            <span class="checkout-price">合计：<i id="checkoutPriceValue">9999</i>&nbsp$</span>
         </div>
     </div>
 </div>

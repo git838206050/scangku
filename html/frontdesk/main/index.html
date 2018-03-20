@@ -12,6 +12,7 @@
 <script src="../../plugins/bootstrap/js/bootstrap.min.js"></script>
 <script src="../base/js/base.js"></script>
 <script src="js/index.js"></script>
+<script src="model/item.js"></script>
 
 </head>
 <body>
@@ -92,7 +93,7 @@
 	</div>
 
 	<div class="col-md-12 product-box" id="itemBox">
-		<a class="col-md-3 p-info" v-for="(item,index) in items" :itemIndex="index">
+		<a class="col-md-3 p-info" v-for="(item,index) in items" :itemIndex="item.id">
 			<img class="product-img" :src="item.mainImageUrl" />
 			<div class="p-price">$ {{ item.price }}</div>
 			<div class="p-name">{{ item.name }}</div>
@@ -122,7 +123,7 @@
 				<button type="button" class="btn btn-default" data-dismiss="modal">
 					关闭
 				</button>
-				<button type="button" class="btn btn-success">
+				<button id="addShopCartBtn" type="button" class="btn btn-success">
 					加入购物车
 				</button>
 			</div>
