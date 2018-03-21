@@ -9,10 +9,17 @@ $(function () {
     }else{
         alert('您的浏览器不兼容localStorage');
     }
+
+    var shopCartIsNull = true;
+    if(localStorage.getItem('shopCartArr') === '[]'){
+        shopCartIsNull = false;
+    }
     new Vue({
         el:'#itemBox',
         data:{
-            shopCart:data
+            shopCart:data,
+            shopCartIsNull:shopCartIsNull
+
         }
     });
 
@@ -27,6 +34,9 @@ $(function () {
                 localStorage.setItem('shopCartArr',JSON.stringify(data));
                 showTotal();
             }
+        }
+        if(localStorage.getItem('shopCartArr') === '[]' || localStorage.getItem('shopCartArr') === null){
+            window.location.reload();
         }
     });
 

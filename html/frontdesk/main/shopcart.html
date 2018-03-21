@@ -67,32 +67,36 @@
 
     <!-- 购物车展示 -->
     <div class="col-md-12 product-box" id="itemBox">
-        <div class="cart-item" v-for="(item,index) in shopCart">
-            <img class="col-md-2 row cart-item-img" :src="item.mainImageUrl"/>
-            <div class="col-md-7 describe-box">
-                <h4 class="col-md-12 shop-name">{{ item.name }}</h4>
-                <p class="col-md-12 describe">
-                    {{ item.describe }}
-                </p>
-            </div>
+        <div v-if="shopCartIsNull">
+            <div class="cart-item" v-for="(item,index) in shopCart">
+                <img class="col-md-2 row cart-item-img" :src="item.mainImageUrl"/>
+                <div class="col-md-7 describe-box">
+                    <h4 class="col-md-12 shop-name">{{ item.name }}</h4>
+                    <p class="col-md-12 describe">
+                        {{ item.describe }}
+                    </p>
+                </div>
 
-            <div class="col-md-1 cart-btn-box price-text">
-                {{ item.price }} $
+                <div class="col-md-1 cart-btn-box price-text">
+                    {{ item.price }} $
+                </div>
+                <div class="col-md-1 cart-btn-box">
+                    <input class="shop-num-btn" max="999" min="1" type="number" :shopIndex="item.id" :value="item.cartShopNum"/>
+                </div>
+                <div class="col-md-1 cart-btn-box">
+                    <button type="button" class="btn btn-danger cart-action-btn" :shopIndex="item.id">
+                        移除商品
+                    </button>
+                </div>
             </div>
-            <div class="col-md-1 cart-btn-box">
-                <input class="shop-num-btn" max="999" min="1" type="number" :shopIndex="item.id" :value="item.cartShopNum"/>
-            </div>
-            <div class="col-md-1 cart-btn-box">
-                <button type="button" class="btn btn-danger cart-action-btn" :shopIndex="item.id">
-                    移除商品
+            <div class="col-md-12 checkout-box">
+                <button type="button" class="btn btn-danger checkout-btn">
+                    结&nbsp&nbsp账
                 </button>
+                <span class="checkout-price">合计：<i id="checkoutPriceValue">9999</i>&nbsp$</span>
             </div>
-        </div>
-        <div class="col-md-12 checkout-box">
-            <button type="button" class="btn btn-danger checkout-btn">
-                结&nbsp&nbsp账
-            </button>
-            <span class="checkout-price">合计：<i id="checkoutPriceValue">9999</i>&nbsp$</span>
+        </div><div id="shopCartNull" v-else>
+            购物车是空的
         </div>
     </div>
 </div>
